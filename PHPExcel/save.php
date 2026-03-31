@@ -1,0 +1,43 @@
+<?php
+//luu cac thong tin vao file excel
+require_once 'PHPExcel.php';
+$objPHPExcel = new PHPExcel();
+ 
+$objPHPExcel->setActiveSheetIndex(0)
+->setCellValue('A1', 'Tên')
+->setCellValue('B1', 'Email')
+->setCellValue('C1', 'Số điện thoại');
+ 
+$lists = array(
+array(
+'name' => 'Nobita',
+'email' => 'nobitacnt@gmail.com',
+'phone' => '0123.456.789',
+),
+array(
+'name' => 'Xuka',
+'email' => 'xuka@gmail.com',
+'phone' => '0222.333.444',
+),
+array(
+'name' => 'Chaien',
+'email' => 'chaien@gmail.com',
+'phone' => '0111.333.444',
+),
+);
+ 
+//set gia tri cho cac cot du lieu
+$i = 2;
+foreach ($lists as $row)
+{
+$objPHPExcel->setActiveSheetIndex(0)
+->setCellValue('A'.$i, $row['name'])
+->setCellValue('B'.$i, $row['email'])
+->setCellValue('C'.$i, $row['phone']);
+$i++;
+}
+//ghi du lieu vao file,định dạng file excel 2007
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+$full_path = 'data.xlsx';//duong dan file
+$objWriter->save($full_path);
+?>

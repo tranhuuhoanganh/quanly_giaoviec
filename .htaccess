@@ -1,0 +1,52 @@
+RewriteEngine on
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteRule ^index.html index.php
+RewriteRule ^dang-ky.html dangky.php
+RewriteRule ^dang-nhap.html dangnhap.php
+RewriteRule ^quen-mat-khau.html quen_matkhau.php
+RewriteRule ^dang-xuat.html process_logout.php
+RewriteRule ^tin-tuc.html tintuc.php
+RewriteRule ^detail/(.*)/(.*).html view_tintuc.php?id=$1&link=$2
+RewriteRule ^gioi-thieu.html gioi_thieu.php
+RewriteRule ^sitemap.xml sitemap.php
+
+RewriteRule ^admincp/logout admincp/logout.php
+RewriteRule ^admincp/forgot-password admincp/forgot_password.php
+RewriteRule ^admincp/profile admincp/index.php?action=profile
+RewriteRule ^admincp/change-password admincp/index.php?action=change_password
+RewriteRule ^admincp/dashboard admincp/index.php?action=dashboard
+RewriteRule ^admincp/sms-detail admincp/index.php?action=sms_detail
+RewriteRule ^admincp/contact-detail admincp/index.php?action=contact_detail
+RewriteRule ^admincp/print-detail admincp/index.php?action=print_detail
+RewriteRule ^admincp/post admincp/index.php?action=post
+RewriteRule ^admincp/add-(.*) admincp/index.php?action=add_$1
+RewriteRule ^admincp/copy-(.*) admincp/index.php?action=copy_$1
+RewriteRule ^admincp/edit-(.*) admincp/index.php?action=edit_$1
+RewriteRule ^admincp/view-(.*) admincp/index.php?action=view_$1
+RewriteRule ^admincp/list-(.*) admincp/index.php?action=list_$1
+RewriteRule ^admincp/thongke-(.*) admincp/index.php?action=thongke_$1
+RewriteRule ^admincp/$ admincp/index.php
+
+RewriteRule ^members/logout members/logout.php
+RewriteRule ^members/forgot-password members/forgot_password.php
+RewriteRule ^members/profile members/index.php?action=profile
+RewriteRule ^members/change-password members/index.php?action=change_password
+RewriteRule ^members/dashboard members/index.php?action=dashboard
+RewriteRule ^members/sms-detail members/index.php?action=sms_detail
+RewriteRule ^members/contact-detail members/index.php?action=contact_detail
+RewriteRule ^members/print-detail members/index.php?action=print_detail
+RewriteRule ^members/post members/index.php?action=post
+RewriteRule ^members/add-(.*) members/index.php?action=add_$1
+RewriteRule ^members/copy-(.*) members/index.php?action=copy_$1
+RewriteRule ^members/edit-(.*) members/index.php?action=edit_$1
+RewriteRule ^members/view-(.*) members/index.php?action=view_$1
+RewriteRule ^members/list-(.*) members/index.php?action=list_$1
+RewriteRule ^members/danh-muc-video/(.*) members/index.php?action=category_video&link=$1
+RewriteRule ^members/thongke-(.*) members/index.php?action=thongke_$1
+RewriteRule ^members/video members/index.php?action=video
+RewriteRule ^members/nhiemvu-nguoimoi members/index.php?action=nhiemvu
+RewriteRule ^members/$ members/index.php
+RewriteRule ^404.html 404.php
+ErrorDocument 404 /404.html
